@@ -18,25 +18,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cm6-44-9Y0">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cm6-44-9Y0">
                                 <rect key="frame" x="252" y="291" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="5fi-E7-AGC"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="byB-t9-U0y">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="byB-t9-U0y">
                                 <rect key="frame" x="252" y="344" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XSo-Mh-81f">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XSo-Mh-81f">
                                 <rect key="frame" x="277" y="382" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="Uks-qx-xiU"/>
+                                </constraints>
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="loginOnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cJc-nL-YsR"/>
+                                    <segue destination="Eti-tB-kKU" kind="show" id="7QA-TN-qfA"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="byB-t9-U0y" firstAttribute="centerX" secondItem="XSo-Mh-81f" secondAttribute="centerX" id="FTq-ET-DXv"/>
+                            <constraint firstItem="cm6-44-9Y0" firstAttribute="trailing" secondItem="byB-t9-U0y" secondAttribute="trailing" id="Hw3-u8-OoM"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="XSo-Mh-81f" secondAttribute="bottom" constant="188" id="WFe-sU-xL0"/>
+                            <constraint firstItem="cm6-44-9Y0" firstAttribute="leading" secondItem="byB-t9-U0y" secondAttribute="leading" id="aov-GH-6Gf"/>
+                            <constraint firstItem="XSo-Mh-81f" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dZ0-Kj-7YM"/>
+                            <constraint firstItem="XSo-Mh-81f" firstAttribute="top" secondItem="byB-t9-U0y" secondAttribute="bottom" constant="8" symbolic="YES" id="qcQ-rX-CZT"/>
+                            <constraint firstItem="byB-t9-U0y" firstAttribute="top" secondItem="cm6-44-9Y0" secondAttribute="bottom" constant="23" id="zN5-aI-i9y"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="passwordTextfield" destination="byB-t9-U0y" id="ICi-yB-zoS"/>
@@ -114,9 +130,10 @@
                             <outlet property="delegate" destination="Op3-iw-9qd" id="5gh-C5-Rf8"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="t7l-BX-KgU"/>
+                    <navigationItem key="navigationItem" title="Title" id="LNe-0Y-wir"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ENS-LC-KGB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationItem title="Title" id="6MG-OM-NAd"/>
             </objects>
             <point key="canvasLocation" x="1388" y="374"/>
         </scene>
