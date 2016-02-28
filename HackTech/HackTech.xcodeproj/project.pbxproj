@@ -15,6 +15,7 @@
 		B03B70E01C82716F003DAFCF /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03B70DF1C82716F003DAFCF /* ProfileTableViewCell.swift */; };
 		B03B70E31C8278BB003DAFCF /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B03B70E21C8278BB003DAFCF /* SWRevealViewController.m */; };
 		B03B70E51C82DE65003DAFCF /* MyQuestionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03B70E41C82DE65003DAFCF /* MyQuestionsTableViewCell.swift */; };
+		B03B70E71C82FA47003DAFCF /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03B70E61C82FA47003DAFCF /* CategoryTableViewCell.swift */; };
 		D83110B81C81B49700B94ACC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83110B71C81B49700B94ACC /* AppDelegate.swift */; };
 		D83110BD1C81B49700B94ACC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D83110BB1C81B49700B94ACC /* Main.storyboard */; };
 		D83110BF1C81B49700B94ACC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D83110BE1C81B49700B94ACC /* Assets.xcassets */; };
@@ -51,6 +52,7 @@
 		B03B70E11C8278BB003DAFCF /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = SWRevealViewController/SWRevealViewController.h; sourceTree = "<group>"; };
 		B03B70E21C8278BB003DAFCF /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
 		B03B70E41C82DE65003DAFCF /* MyQuestionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyQuestionsTableViewCell.swift; sourceTree = "<group>"; };
+		B03B70E61C82FA47003DAFCF /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		D83110B41C81B49700B94ACC /* HackTech.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackTech.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D83110B71C81B49700B94ACC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D83110BC1C81B49700B94ACC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				B03B70CE1C8246A8003DAFCF /* SWRevealViewController */,
 				B03B70DF1C82716F003DAFCF /* ProfileTableViewCell.swift */,
 				B03B70E41C82DE65003DAFCF /* MyQuestionsTableViewCell.swift */,
+				B03B70E61C82FA47003DAFCF /* CategoryTableViewCell.swift */,
 			);
 			path = HackTech;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				B03B70E51C82DE65003DAFCF /* MyQuestionsTableViewCell.swift in Sources */,
 				B03B70E01C82716F003DAFCF /* ProfileTableViewCell.swift in Sources */,
 				58EE38031C829C9C001B6E09 /* AskViewController.swift in Sources */,
+				B03B70E71C82FA47003DAFCF /* CategoryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
