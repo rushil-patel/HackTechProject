@@ -13,8 +13,11 @@ print("Database connection:\n",db, "\n")
 '''
 db.qa.insert_one(
 	{
-		"username": "Admin",
-		"password": "password"
+		"userID": "timchu",
+		"password": "password",
+		"name": "Timothy Chu",
+		"reputation": str(9999),
+		"categories": ["Math", "Computer Science", "Science"]
 	}
 )
 db.qa.insert_one(
@@ -23,8 +26,8 @@ db.qa.insert_one(
 		"category": "social",
 		"question": "DTF?",
 		"description": "in bed",
-		"upvotes": 0,
-		"downvotes": 0,
+		"upvotes": str(0),
+		"downvotes": str(0),
 		"answers": []
 	}
 )
@@ -38,30 +41,45 @@ app = Flask(__name__)
 def login():
 	if request.method == "POST":
 		username = request.form["username"]
-		password = request.form['password']
+		password = request.form["password"]
 		print(username)
 		print(password)
-		cursor = db.qa.find({"username": username, "password": password})
-		if(cursor.count() == 1):
-			return "Found matching username and password"
-		else:
+		cursor = db.qa.find_one({"userID": username, "password": password})
+		if cursor is None:
 			return "401: Didn't find user"
+		else:
+			
+			dictionary = {"username": username,
+				"name": cursor["name"], 
+				"reputation": str(cursor["reputation"])}
+			return json.dumps(dictionary)
+
+#SUBSCRIBE
+@app.route("/subscribe/<username>", methods=["POST"])
+def subscribeCategory(username):
+	dictionary = db.qa.find_one({"userID": username})
+	subscriptionList = dictionary["categories"]
+	subscriptionList.append(request.form["category"])
+	dictionary["answers"] = subscriptionList
+	db.qa.update_one({"userId": username}, 
+			{"$set": {"answers": subscriptionList}})
+	return "Subscribing"
 
 #ADD QUESTION
 @app.route("/add/", methods=["POST"])
-def add():
+def addQuestion():
 	username = request.form["username"]
 	question = request.form["question"]
 	description = request.form["description"]
 	category = request.form["category"]
-	db.qa.insert_one({"questionId": Counter.i,
+	db.qa.insert_one({"questionId": str(Counter.i),
 			"time": time.time(),
 			"username": username,
 			"category": category,
 			"question": question,
 			"description": description,
-			"upvotes": 0, 
-			"downvotes": 0,
+			"upvotes": str(0), 
+			"downvotes": str(0),
 			"answers": []})
 	Counter.i = Counter.i + 1
 	return "Added question to DB"
@@ -74,7 +92,9 @@ def findCategory(category):
 	cursor = cursor.sort([["time", pymongo.DESCENDING]])
 	for document in cursor:
 		questionList.append(document)
-	return json.dumps(str(questionList))
+	dictionary = {"questions": questionList}
+	print (type(dictionary))
+	return str(dictionary)
 
 #FIND QUESTION 
 @app.route("/findQuestion/")
@@ -89,14 +109,19 @@ def findQuestion():
 #ANSWER QUESTION/POST REPLY
 @app.route("/answerQuestion/<int:questionId>", methods=["POST"])
 def answerQuestion(questionId):
-	dict = db.qa.find_one({"questionId": questionId})
-	print(dict)
-	answersList = dict["answers"]
+	dictionary = db.qa.find_one({"questionId": questionId})
+	print(dictionary)
+	answersList = dictionary["answers"]
 	answersList.append(request.form["answer"])
-	dict["answers"] = answersList
+	dictionary["answers"] = answersList
 	db.qa.update_one({"questionId": questionId}, 
 			{"$set": {"answers": answersList}})
-	return "answering..."
+	return "Answering"
+
+
+
+
+
 
 @app.route("/profile/<int:post_id>")
 def profile(post_id):
