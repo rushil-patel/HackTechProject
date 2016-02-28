@@ -58,11 +58,13 @@ def login():
 @app.route("/subscribe/<username>", methods=["POST"])
 def subscribeCategory(username):
 	dictionary = db.qa.find_one({"userID": username})
+	print(dictionary)
 	subscriptionList = dictionary["categories"]
 	subscriptionList.append(request.form["category"])
-	dictionary["answers"] = subscriptionList
-	db.qa.update_one({"userId": username}, 
-			{"$set": {"answers": subscriptionList}})
+	print(subscriptionList)
+	dictionary["categories"] = subscriptionList
+	db.qa.update_one({"userID": username}, 
+			{"$set": {"categories": subscriptionList}})
 	return "Subscribing"
 
 #ADD QUESTION
