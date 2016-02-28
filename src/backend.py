@@ -1,8 +1,10 @@
 import json
 
+class Counter:
+	i = 0
+
 from pymongo import MongoClient
 client = MongoClient("mongodb://hacktech:slo@ds047602.mlab.com:47602/hacktech")
-
 db = client.hacktech
 print("Database connection:\n",db, "\n")
 
@@ -13,14 +15,24 @@ db.qa.insert_one(
 		"password": "password"
 	}
 )
+db.qa.insert_one(
+	{
+		"username": "Admin",
+		"category": "social",
+		"question": "DTF?",
+		"description": "in bed",
+		"upvotes": 0,
+		"downvotes": 0,
+		"answers": []
+	}
+)
 '''
-
-#cursor = db.qa.find({"username": username, "password": password})
 
 from flask import Flask, jsonify, request, render_template
 app = Flask(__name__)
 
-@app.route("/login/", methods=["GET", "POST"])
+#LOGIN
+@app.route("/login/", methods=["POST"])
 def login():
 	if request.method == "POST":
 		username = request.form["username"]
@@ -31,7 +43,40 @@ def login():
 		if(cursor.count() == 1):
 			return "Found user"
 		else:
-			return "Didn't find user"
+			return "401: Didn't find user"
+
+#ADD QUESTION
+@app.route("/add/", methods=["POST"])
+def add():
+	username = request.form["username"]
+	question = request.form["question"]
+	description = request.form["description"]
+	category = request.form["category"]
+	db.qa.insert_one({"questionId": Counter.i,
+			"username": username,
+			"category": category,
+			"question": question,
+			"description": description,
+			"upvotes": 0, 
+			"downvotes": 0,
+			"answers": []})
+	Counter.i = Counter.i + 1
+	return "Added"
+
+#FIND QUESTION FROM CATEGORY
+@app.route("/findCategory/<category>")
+def findCategory(category):
+	questionList = []
+	cursor = db.qa.find({"category": category})
+	for document in cursor:
+		questionList.append(document)
+	dict = {"questions": questionList}
+	print(dict)
+	return jsonify(dict)
+
+#FIND QUESTION 
+#answer question
+
 
 @app.route("/profile/<int:post_id>")
 def profile(post_id):
@@ -46,3 +91,4 @@ def getpost():
 
 if __name__ == "__main__":
 	app.run(debug=True)
+
