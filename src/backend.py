@@ -77,7 +77,6 @@ def findCategory(category):
 #FIND QUESTION 
 #answer question
 
-
 @app.route("/profile/<int:post_id>")
 def profile(post_id):
 	return "Profile id %s" % post_id
