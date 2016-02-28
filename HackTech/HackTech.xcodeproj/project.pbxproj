@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58EE38011C829C2D001B6E09 /* AnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58EE38001C829C2D001B6E09 /* AnswerViewController.swift */; };
+		58EE38031C829C9C001B6E09 /* AskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58EE38021C829C9C001B6E09 /* AskViewController.swift */; };
 		B03B70CD1C81BD60003DAFCF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03B70CC1C81BD60003DAFCF /* LoginViewController.swift */; };
 		B03B70D41C824B0A003DAFCF /* HomeFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03B70D31C824B0A003DAFCF /* HomeFeedViewController.swift */; };
 		B03B70DE1C826339003DAFCF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B03B70DD1C826339003DAFCF /* Images.xcassets */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		58EE38001C829C2D001B6E09 /* AnswerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
+		58EE38021C829C9C001B6E09 /* AskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AskViewController.swift; sourceTree = "<group>"; };
 		B03B70CC1C81BD60003DAFCF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B03B70CF1C8246DE003DAFCF /* HackTech-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HackTech-Bridging-Header.h"; sourceTree = "<group>"; };
 		B03B70D31C824B0A003DAFCF /* HomeFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeFeedViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +128,8 @@
 				D83110C01C81B49700B94ACC /* LaunchScreen.storyboard */,
 				D83110C31C81B49700B94ACC /* Info.plist */,
 				B03B70CC1C81BD60003DAFCF /* LoginViewController.swift */,
+				58EE38001C829C2D001B6E09 /* AnswerViewController.swift */,
+				58EE38021C829C9C001B6E09 /* AskViewController.swift */,
 				B03B70D31C824B0A003DAFCF /* HomeFeedViewController.swift */,
 				B03B70CE1C8246A8003DAFCF /* SWRevealViewController */,
 				B03B70DF1C82716F003DAFCF /* MealTableViewCell.swift */,
@@ -281,11 +287,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58EE38011C829C2D001B6E09 /* AnswerViewController.swift in Sources */,
 				B03B70CD1C81BD60003DAFCF /* LoginViewController.swift in Sources */,
 				D83110B81C81B49700B94ACC /* AppDelegate.swift in Sources */,
 				B03B70E31C8278BB003DAFCF /* SWRevealViewController.m in Sources */,
 				B03B70D41C824B0A003DAFCF /* HomeFeedViewController.swift in Sources */,
 				B03B70E01C82716F003DAFCF /* MealTableViewCell.swift in Sources */,
+				58EE38031C829C9C001B6E09 /* AskViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
