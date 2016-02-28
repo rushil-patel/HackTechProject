@@ -13,12 +13,12 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var usernameTextfield: UITextField!
     
     @IBAction func loginOnClick(sender: AnyObject) {
-        let username = usernameTextfield.text!
-        let pass = passwordTextfield.text!
-        
-        let request = NSMutableURLRequest(URL: NSURL(string: "url here")!)
-        request.HTTPMethod = "POST"
-        let postString = "
+//        let username = usernameTextfield.text!
+//        let pass = passwordTextfield.text!
+//        
+//        let request = NSMutableURLRequest(URL: NSURL(string: "url here")!)
+//        request.HTTPMethod = "POST"
+        //let postString = "
     }
     
     override func viewDidLoad() {

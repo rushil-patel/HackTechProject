@@ -39,11 +39,7 @@
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="loginOnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cJc-nL-YsR"/>
-<<<<<<< Updated upstream
                                     <segue destination="lx7-OZ-Ebz" kind="show" id="saj-P1-S94"/>
-=======
-                                    <segue destination="J02-DN-aUS" kind="show" id="tmR-Bd-mlG"/>
->>>>>>> Stashed changes
                                 </connections>
                             </button>
                         </subviews>
@@ -67,22 +63,6 @@
             </objects>
             <point key="canvasLocation" x="-177" y="-624"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="DMW-gb-hPJ">
-            <objects>
-                <navigationController id="J02-DN-aUS" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gcT-uJ-KFE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="Op3-iw-9qd" kind="relationship" relationship="rootViewController" id="pJJ-wY-vGj"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oBX-PX-dG6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="571" y="311"/>
-        </scene>
         <!--Feed View Controller-->
         <scene sceneID="d3B-2d-B41">
             <objects>
@@ -100,7 +80,7 @@
                             </segments>
                         </segmentedControl>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="QuestionCell" rowHeight="101" id="hPn-QD-QP9">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="101" id="hPn-QD-QP9">
                                 <rect key="frame" x="0.0" y="122" width="600" height="101"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hPn-QD-QP9" id="Mgs-Yl-S33">
@@ -129,26 +109,6 @@
                                             <color key="textColor" red="0.30588235289999999" green="0.30196078430000001" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="05N-cK-5xD">
-                                            <rect key="frame" x="497" y="20" width="47" height="30"/>
-                                            <state key="normal" title="upvote"/>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fvG-jx-DCI">
-                                            <rect key="frame" x="477" y="48" width="67" height="30"/>
-                                            <state key="normal" title="downvote"/>
-                                        </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JbC-wu-hdn">
-                                            <rect key="frame" x="546" y="24" width="14" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Et-4f-tG9">
-                                            <rect key="frame" x="546" y="53" width="11" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="IcW-92-fhW" firstAttribute="top" secondItem="Mgs-Yl-S33" secondAttribute="topMargin" constant="8" id="NDT-Yc-QHB"/>
@@ -165,30 +125,23 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
-                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="Op3-iw-9qd" id="j2F-Pb-naY"/>
                             <outlet property="delegate" destination="Op3-iw-9qd" id="5gh-C5-Rf8"/>
                         </connections>
                     </tableView>
-<<<<<<< Updated upstream
                     <navigationItem key="navigationItem" title="Title" id="LNe-0Y-wir">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="s9y-gq-eeG"/>
                     </navigationItem>
                     <connections>
                         <outlet property="open" destination="s9y-gq-eeG" id="2Y4-3o-fY5"/>
                     </connections>
-=======
-                    <navigationItem key="navigationItem" title="Feed" id="HEZ-nd-ZHp">
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="CAk-pN-CTW"/>
-                    </navigationItem>
->>>>>>> Stashed changes
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ENS-LC-KGB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationItem title="Title" id="6MG-OM-NAd"/>
             </objects>
-            <point key="canvasLocation" x="1418" y="332"/>
+            <point key="canvasLocation" x="1388" y="374"/>
         </scene>
-<<<<<<< Updated upstream
         <!--Table View Controller-->
         <scene sceneID="k8L-iz-LMz">
             <objects>
@@ -266,41 +219,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yht-eh-fLo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1388" y="-380"/>
-=======
-        <!--Collection View Controller-->
-        <scene sceneID="OAn-dj-8fw">
-            <objects>
-                <collectionViewController id="cfw-E1-Xsb" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="6vn-4n-CYK">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CBz-qn-2RQ">
-                            <size key="itemSize" width="152" height="133"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryCell" id="6Ne-Pc-cZf">
-                                <rect key="frame" x="0.0" y="0.0" width="152" height="133"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="152" height="133"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="cfw-E1-Xsb" id="TAh-K5-m8T"/>
-                            <outlet property="delegate" destination="cfw-E1-Xsb" id="iqR-C2-IA9"/>
-                        </connections>
-                    </collectionView>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zFJ-5w-wvp" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2883" y="454"/>
->>>>>>> Stashed changes
         </scene>
     </scenes>
     <resources>
