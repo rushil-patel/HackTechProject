@@ -6,7 +6,7 @@ class AskViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     @IBOutlet weak var questionText: UITextView!
     @IBOutlet weak var categories: UIPickerView!
     
-    var Array = ["Science", "Tech", "Social", "Other"]
+    var Array = ["Science", "Math", "Computer Science", "Other"]
     var theQuestion = ""
     var theCategorie = ""
     
