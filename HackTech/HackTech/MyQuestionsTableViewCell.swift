@@ -1,5 +1,5 @@
 //
-//  MealTableViewCell.swift
+//  MyQuestionsTableViewCell.swift
 //  HackTech
 //
 //  Created by Jonathan Molina on 2/27/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MealTableViewCell: UITableViewCell {
+class MyQuestionsTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
