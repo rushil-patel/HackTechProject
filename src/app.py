@@ -72,7 +72,7 @@ def findCategory(category):
 		questionList.append(document)
 	dict = {"questions": questionList}
 	print(dict)
-	return jsonify(dict)
+	return "found"
 
 #FIND QUESTION 
 #answer question
