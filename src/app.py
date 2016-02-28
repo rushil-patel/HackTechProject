@@ -1,4 +1,6 @@
-import json
+import json 
+import time
+import pymongo
 
 class Counter:
 	i = 0
@@ -41,7 +43,7 @@ def login():
 		print(password)
 		cursor = db.qa.find({"username": username, "password": password})
 		if(cursor.count() == 1):
-			return "Found user"
+			return "Found matching username and password"
 		else:
 			return "401: Didn't find user"
 
@@ -53,6 +55,7 @@ def add():
 	description = request.form["description"]
 	category = request.form["category"]
 	db.qa.insert_one({"questionId": Counter.i,
+			"time": time.time(),
 			"username": username,
 			"category": category,
 			"question": question,
@@ -61,21 +64,39 @@ def add():
 			"downvotes": 0,
 			"answers": []})
 	Counter.i = Counter.i + 1
-	return "Added"
+	return "Added question to DB"
 
 #FIND QUESTION FROM CATEGORY
 @app.route("/findCategory/<category>")
 def findCategory(category):
 	questionList = []
 	cursor = db.qa.find({"category": category})
+	cursor = cursor.sort([["time", pymongo.DESCENDING]])
 	for document in cursor:
 		questionList.append(document)
-	dict = {"questions": questionList}
-	print(dict)
-	return "found"
+	return json.dumps(str(questionList))
 
 #FIND QUESTION 
-#answer question
+@app.route("/findQuestion/")
+def findQuestion():
+	questionList = []
+	cursor = db.qa.find()
+	for document in cursor:
+		questionList.append(document)
+	print(questionList[2])
+	return str(questionList[2])
+
+#ANSWER QUESTION/POST REPLY
+@app.route("/answerQuestion/<int:questionId>", methods=["POST"])
+def answerQuestion(questionId):
+	dict = db.qa.find_one({"questionId": questionId})
+	print(dict)
+	answersList = dict["answers"]
+	answersList.append(request.form["answer"])
+	dict["answers"] = answersList
+	db.qa.update_one({"questionId": questionId}, 
+			{"$set": {"answers": answersList}})
+	return "answering..."
 
 @app.route("/profile/<int:post_id>")
 def profile(post_id):
