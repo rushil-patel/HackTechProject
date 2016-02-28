@@ -23,11 +23,15 @@ app = Flask(__name__)
 @app.route("/login/", methods=["GET", "POST"])
 def login():
 	if request.method == "POST":
-		data = request.data
-		json = request.json['password']
-		print(data)
-		print(json["username"])
-		return data
+		username = request.form["username"]
+		password = request.form['password']
+		print(username)
+		print(password)
+		cursor = db.qa.find({"username": username, "password": password})
+		if(cursor.count() == 1):
+			return "Found user"
+		else:
+			return "Didn't find user"
 
 @app.route("/profile/<int:post_id>")
 def profile(post_id):
