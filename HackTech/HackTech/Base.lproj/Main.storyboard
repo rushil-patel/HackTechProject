@@ -39,11 +39,7 @@
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="loginOnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cJc-nL-YsR"/>
-<<<<<<< Updated upstream
                                     <segue destination="lx7-OZ-Ebz" kind="show" id="saj-P1-S94"/>
-=======
-                                    <segue destination="J02-DN-aUS" kind="show" id="tmR-Bd-mlG"/>
->>>>>>> Stashed changes
                                 </connections>
                             </button>
                         </subviews>
@@ -171,24 +167,20 @@
                             <outlet property="delegate" destination="Op3-iw-9qd" id="5gh-C5-Rf8"/>
                         </connections>
                     </tableView>
-<<<<<<< Updated upstream
                     <navigationItem key="navigationItem" title="Title" id="LNe-0Y-wir">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="s9y-gq-eeG"/>
                     </navigationItem>
                     <connections>
                         <outlet property="open" destination="s9y-gq-eeG" id="2Y4-3o-fY5"/>
                     </connections>
-=======
                     <navigationItem key="navigationItem" title="Feed" id="HEZ-nd-ZHp">
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="CAk-pN-CTW"/>
                     </navigationItem>
->>>>>>> Stashed changes
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ENS-LC-KGB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1418" y="332"/>
         </scene>
-<<<<<<< Updated upstream
         <!--Table View Controller-->
         <scene sceneID="k8L-iz-LMz">
             <objects>
@@ -266,7 +258,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yht-eh-fLo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1388" y="-380"/>
-=======
         <!--Collection View Controller-->
         <scene sceneID="OAn-dj-8fw">
             <objects>
@@ -300,7 +291,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zFJ-5w-wvp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2883" y="454"/>
->>>>>>> Stashed changes
         </scene>
     </scenes>
     <resources>
